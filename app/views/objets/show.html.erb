@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @objet.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @objet.content %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @objet.price %>
+</p>
+
+<%= link_to 'Edit', edit_objet_path(@objet) %> |
+<%= link_to 'Back', objets_path %>

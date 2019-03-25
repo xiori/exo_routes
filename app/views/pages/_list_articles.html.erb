@@ -1,0 +1,18 @@
+</br>
+<% if logged_in?(:admin) %>
+<h1 class="title has-text-danger">Articles</h1>
+<% else %>
+<h1 class="title ">Articles</h1>
+<% end %>
+<% @articles.each do |article| %>
+</br>
+<%= link_to article.title,article %>
+</br>
+<%= article.content %>
+</br>
+<%= link_to "editer #{article.title}", edit_article_path(article), data: {confirm:'are you sure ?'}%>
+</br>
+<%= link_to "destroy #{article.title}", article, method: :delete, data: {confirm:"are you sure?"}%>
+</br>
+<% end %>
+</br>

@@ -1,0 +1,19 @@
+<% if logged_in?(:admin) %>
+<h1 class="title has-text-danger">Objets</h1>
+<% else  %>
+<h1 class="title">Objets</h1>
+<% end %>
+<% @objets.each do |objet| %>
+</br>
+<%= link_to objet.title,objet %>
+</br>
+<%= objet.content %>
+</br>
+<%= objet.price %>
+</br>
+<%= link_to "editer", edit_objet_path(objet) if logged_in?(:admin, :user) %>
+</br>
+<%= link_to "destroy", objet, method: :delete, data: {confirm:"are you sure?"} if logged_in?(:admin) %>
+</br>
+
+<% end %>
